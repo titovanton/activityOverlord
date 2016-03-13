@@ -1,0 +1,38 @@
+<article class="container">
+
+  <form id="session-new" action="/session/create" method="POST" class="form-horizontal">
+    <h2>Please sign in...</h2>
+    <hr>
+
+    <% if (flash && flash.err) { %>
+      <ul class="alert alert-success">
+        <% Object.keys(flash.err).forEach(function(key) { %>
+          <li><%- key + ': ' + JSON.stringify(flash.err[key]) %></li>
+          <% }); %>
+      </ul>
+    <% }; %>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Email address</label>
+      <div class="col-sm-5">
+          <input type="text" class="form-control" placeholder="Email address" name="email">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Password</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" placeholder="Password" name="title">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-5">
+          <button type="submit" class="btn btn-default">Sign-in</button>
+      </div>
+    </div>
+
+    <input type="hidden" name="_csrf" value="<%= _csrf %>">
+  </form>
+
+</article>
