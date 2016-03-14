@@ -28,11 +28,10 @@ apt-get install -y python-software-properties python g++ make
 curl -sL https://deb.nodesource.com/setup_4.x | bash -
 apt-get install -y nodejs
 
-# sails
-npm -g install sails
-
-# install nodemon
+# sails and dependencies
+npm install -g sails
 npm install -g nodemon
+npm install -g bcrypt
 
 # # sails-mongo
 # npm install sails-mongo

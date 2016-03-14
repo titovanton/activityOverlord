@@ -6,11 +6,11 @@
  */
 
 module.exports = {
-  'new': function(req, res) {
+  new: function(req, res) {
     res.view();
   },
 
-  'create': function(req, res, next) {
+  create: function(req, res, next) {
     User.create(req.params.all(), function userCreated(err, user) {
 
       if (err) {
@@ -24,7 +24,7 @@ module.exports = {
     });
   },
 
-  'show': function(req, res, next) {
+  show: function(req, res, next) {
     User.findOne(req.param('id'), function foundUser(err, user) {
       if (err) return next(err);
       if (!user) return next();
@@ -35,7 +35,7 @@ module.exports = {
     });
   },
 
-  'index': function(req, res, next) {
+  index: function(req, res, next) {
     User.find(function foundUsers(err, users) {
       if (err) return next(err);
       if (!users) return next();
@@ -46,7 +46,7 @@ module.exports = {
     });
   },
 
-  'edit': function(req, res, next) {
+  edit: function(req, res, next) {
     User.findOne(req.param('id'), function foundUser(err, user) {
       if (err) return next(err);
       if (!user) return next();
@@ -57,7 +57,7 @@ module.exports = {
     });
   },
 
-  'update': function(req, res, next) {
+  update: function(req, res, next) {
     User.update(req.param('id'), req.params.all(), function userUpdated(err) {
 
       if (err) {
@@ -71,7 +71,7 @@ module.exports = {
     });
   },
 
-  'destroy': function(req, res, next) {
+  destroy: function(req, res, next) {
     User.findOne(req.param('id'), function foundUser(err, user) {
       if (err) return next(err);
       if (!user) return next();
