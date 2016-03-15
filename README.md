@@ -14,6 +14,11 @@ Also, you will see the nodemone package in bootstrap.sh. Follow the link bellow 
 read more about it and use `nodemone -L` instead `sails lift` to do not reload
 sails when a files changed.
 
+### TODO
+
+The author did not show how to as promised in part of sails.io. Gonna make done
+it in a future.
+
 ### Mongo DB
 
 There was the problem with installing sails-mongo,
