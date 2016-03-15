@@ -19,7 +19,14 @@
         <td><%= user.name %></td>
         <td><%= user.title %></td>
         <td><%= user.email %></td>
-        <td><%= user.admin %></td>
+
+        <td>
+          <% if (user.admin) { %>
+            <i style="font-size:30px; color:green;" class="glyphicon glyphicon-king"></i>
+          <% } else { %>
+            <i style="font-size:30px;" class="glyphicon glyphicon-pawn"></i>
+          <% } %>
+        </td>
 
         <td>
           <a href="/user/show/<%= user.id %>" class="btn btn-sm btn-primary">

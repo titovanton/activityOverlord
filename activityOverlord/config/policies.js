@@ -40,7 +40,7 @@ module.exports.policies = {
     '*': ['admin', 'flash'],
     show: ['userCanSeeProfile', 'flash'],
     edit: ['userCanSeeProfile', 'flash'],
-    update: ['userCanSeeProfile', 'flash'],
+    update: ['userCanSeeProfile', 'canAssignAdmin', 'flash'],
     new: 'flash',
     create: 'flash'
   }

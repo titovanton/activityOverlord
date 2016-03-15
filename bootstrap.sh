@@ -34,6 +34,6 @@ npm install -g nodemon
 npm install -g bcrypt
 
 # # sails-mongo
-# npm install sails-mongo
+# npm install -g sails-mongo
 
 echo "Voila!"

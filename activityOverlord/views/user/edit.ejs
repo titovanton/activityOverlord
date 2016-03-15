@@ -33,6 +33,19 @@
       </div>
     </div>
 
+    <% if (session.user.admin) { %>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-5">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="admin"
+                <% if (user.admin) { %>checked="checked"<% } else { %><% } %>> Admin
+            </label>
+          </div>
+        </div>
+      </div>
+    <% } %>
+
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-5">
           <button type="submit" class="btn btn-default">Proceed</button>

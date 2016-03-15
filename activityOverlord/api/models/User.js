@@ -32,18 +32,12 @@ module.exports = {
 
     encryptedPassword: {
       type: 'string'
-    }
+    },
+  },
 
-    // toJSON: function() {
-    //   var obj = this.toObject();
-    //
-    //   delete obj.password;
-    //   delete obj.confirmation;
-    //   delete obj.encryptedPassword;
-    //   delete obj._csrf;
-    //
-    //   return obj;
-    // }
+  beforeValidate: function beforeValidate(values, next) {
+    values.admin = !!values.admin;
+    next();
   },
 
   beforeCreate: function beforeCreate(values, next) {
