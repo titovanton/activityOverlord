@@ -37,8 +37,12 @@ module.exports.policies = {
   ***************************************************************************/
 
   user: {
-    '*': 'authenticated',
-    new: 'flash'
+    '*': ['admin', 'flash'],
+    show: ['userCanSeeProfile', 'flash'],
+    edit: ['userCanSeeProfile', 'flash'],
+    update: ['userCanSeeProfile', 'flash'],
+    new: 'flash',
+    create: 'flash'
   }
 	// RabbitController: {
 

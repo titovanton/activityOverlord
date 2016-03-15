@@ -13,4 +13,4 @@ module.exports = function authenticated(req, res, ok) {
       res.redirect('/session/new');
       return;
   }
-}
+};

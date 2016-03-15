@@ -13,11 +13,20 @@ module.exports = {
     // var newDateObj = new date(oldDateObj.getTime() + 60 * 1000);
     // req.session.cookie.expires = newDateObj;
     // req.session.authenticated = true;
-
     res.view();
   },
 
   create: function(req, res, next) {
+
+    // first user in the list will always be admin
+    User.find(function foundUsers(err, users) {
+      if (!err && users) {
+        User.update(users[0].id, {admin: true}, function userUpdated(err) {
+          if (err) console.log(err);
+        });
+      }
+    });
+
     if (!req.param('email') || !req.param('password')) {
       var usernamePasswordRequiredError = [{
         name: 'usernamePasswordRequired',
@@ -61,7 +70,12 @@ module.exports = {
         }
 
         req.session.authenticated = true;
-        req.session.User = user;
+        req.session.user = user;
+
+        if (user.admin) {
+          res.redirect('/user');
+          return;
+        }
 
         res.redirect('/user/show/' + user.id);
       });

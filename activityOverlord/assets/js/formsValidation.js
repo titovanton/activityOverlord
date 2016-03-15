@@ -17,7 +17,7 @@
 
       confirmation: {
         required: true,
-        equalTo: '[name="password"]'
+        equalTo: '#password'
       }
     },
 

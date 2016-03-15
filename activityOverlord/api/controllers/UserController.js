@@ -20,7 +20,9 @@ module.exports = {
         return res.redirect('/user/new');
       }
 
-      res.redirect('/user/show/' + user.id)
+      req.session.authenticated = true;
+      req.session.user = user;
+      res.redirect('/user/show/' + user.id);
     });
   },
 
