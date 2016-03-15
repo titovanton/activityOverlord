@@ -7,6 +7,10 @@ You can easy up it and run with Vagrant. Some bugs and errors was solved,
 for example in userCanSeeProfile was refactored if statement. Resolved the
 error with order policies for UserController.
 
+Also, you will see the nodemone packeg in bootstrap.sh. Follow the link bellow to
+read more about it and use `nodemone -L` instead `sails lift` to do not reload
+sails when a files changed.
+
 ### Mongo DB
 
 There was the problem with installing sails-mongo,
@@ -17,6 +21,9 @@ not empty and every time when some one create a session.
 
 ### Usefull links
 
-First of all, the author of guide must follows at least style guide link ):-[
+First of all, the author of the guide must follows at least the style guide link ):-[
 
 - [JavaScript style guid](https://github.com/airbnb/javascript/tree/master/es5)
+- [nodemon](http://nodemon.io/)
+- [Sails](http://sailsjs.org/)
+- [Vagrant](https://www.vagrantup.com/)
